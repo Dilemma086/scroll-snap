@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+   }
+body{
+    overflow: hidden;
+}
+section{
+    height: 100vh;
+    overflow-y: scroll;
+    font-family: sans-serif;
+    /* scroll-snap-type: mandatory; */
+    /* scroll-snap-points-y: repeat(100vh); */
+    scroll-snap-type: y mandatory;
+    /* хром, сафари */
+
+}
+.child {
+    /* border-bottom: 1px solid white; */
+    /* padding: 1rem; */
+    height: 100vh;
+    scroll-snap-align: start;
+    text-align: center;
+    position: relative;
+    overflow-y: hidden;
+    
+}
+section>:nth-child(2n){
+    background-color: greenyellow;
+   
+}
+h1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #000;
+    width: 100%;
+    left: 0;
+    font-size: calc(1rem + 3vw);
+}
+   
+
+section::-webkit-scrollbar,
+.child::-webkit-scrollbar{
+    width: 0px;
+    background: rgba(255, 255, 255, 0.0);
+}
+
+/* ie 10+ */
+section,.child {
+    -ms-overflow-style: none;
+}
+
+/* фф (свойство больше не работает, других способов тоже нет)*/
+/* section,.child{
+    overflow: -moz-scrollbars-none;
+} */
+section{
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
